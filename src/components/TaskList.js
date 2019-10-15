@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Task from './Task'
 
+// TODO: GET ALL TASKS
+
 const TaskList = props =>
     <ul>
         

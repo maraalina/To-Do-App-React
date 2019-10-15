@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: CRUDE ACTIONS FOR TASK USING FETCH API METHODS
+
 const Task = (props) => {
   if (props.isEditing) {
     return (

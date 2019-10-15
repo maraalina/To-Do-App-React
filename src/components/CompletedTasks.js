@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: CHECK OR UNCHECK USING API METHODS
+
 const CompletedTasks = props => {
     return (
         <label className="hide-tasks">

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import CompletedTasks from './CompletedTasks'
 
+// TODO: GET USER
+
 const Header = props => {
     return (
           <header>
