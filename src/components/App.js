@@ -1,17 +1,11 @@
 import React from 'react';
-import Header from './Header';
-import TaskList from './TaskList';
-import AddTaskForm from './AddTaskForm';
+import UserContainer from './user';
 
 // TODO: DO SOMETHING ABOUT THESE METHODS
 // APP SHOULD INCLUDE A DEFAULT LAYOUT
 // HEADER SHOULD BE THE SAME FOR ALL THE PAGES
-// THERE SHOULD BE LOGIN METHODS
-// THERE SHOULD BE LOGIN FORM
 // THERE SHOULD BE ROUTING
-// THERE SHOULD BE LOGIN FORM VALIDATION
-// THERE SHOULD BE GLOBAL NOTIFICATION SYSTEM
-// THERE SHOULD BE 
+// THERE SHOULD BE GLOBAL NOTIFICATION SYSTEM 
 
 class App extends React.Component {
 
@@ -152,32 +146,21 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="todolist">
-        <Header
-          title="To Do List"
-          toggleComplete={this.toggleComplete}
-          isCompleted={this.state.isCompleted} 
-        />
-
-        <TaskList
-          tasks={this.state.tasks}
-          toggleCheckboxChange={this.toggleCheckboxChange}
-          toggleEditing={this.toggleEditing}
-          changeText={this.changeText}
-          removeTask={this.removeTask}
-          isCompleted={this.state.isCompleted}
-         
-        />
-
-        <AddTaskForm 
-          newTaskSubmitHandler={this.newTaskSubmitHandler}  
-          pendingTask={this.state.pendingTask}
-          handleValueChange={this.handleValueChange}
-          isClicked={this.state.addTaskisClicked}
-          toggleAddTask={this.toggleAddTask}
-        />
-
-      </div>
+                <UserContainer 
+                  title="To Do List"
+                  toggleComplete={this.toggleComplete}
+                  isCompleted={this.state.isCompleted} 
+                  tasks={this.state.tasks}
+                  toggleCheckboxChange={this.toggleCheckboxChange}
+                  toggleEditing={this.toggleEditing}
+                  changeText={this.changeText}
+                  removeTask={this.removeTask}
+                  newTaskSubmitHandler={this.newTaskSubmitHandler}  
+                  pendingTask={this.state.pendingTask}
+                  handleValueChange={this.handleValueChange}
+                  isClicked={this.state.addTaskisClicked}
+                  toggleAddTask={this.toggleAddTask}
+                /> 
     );
   }
 }

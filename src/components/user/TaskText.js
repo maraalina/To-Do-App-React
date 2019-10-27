@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Task = (props) => {
-  if (props.isEditing) {
+const Task = ({
+  isEditing, 
+  children, 
+  handleToggleEditing, 
+  handleTextEdits
+}) => {
+  
+  if (isEditing) {
     return (
       <div>
         <input className="input-form"
-            value={props.children}
-            onChange={props.handleTextEdits}
+            value={children}
+            onChange={handleTextEdits}
         />
 
         <input 
@@ -15,7 +21,7 @@ const Task = (props) => {
             value="Save"
         />
 
-        <button type="button" className="cancel" onClick={props.handleToggleEditing}>
+        <button type="button" className="cancel" onClick={handleToggleEditing}>
             Cancel
         </button>
       </div> 
@@ -23,8 +29,8 @@ const Task = (props) => {
   }
 
   return (
-    <span className="task-text" onClick={props.handleToggleEditing}>
-      {props.children}
+    <span className="task-text" onClick={handleToggleEditing}>
+      {children}
     </span>
   );
 }

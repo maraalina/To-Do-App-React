@@ -5,13 +5,18 @@ import CompletedTasks from './CompletedTasks'
 
 // TODO: GET USER
 
-const Header = props => {
+const Header = ({ 
+  title, 
+  toggleComplete, 
+  isCompleted 
+}) => {
+
     return (
           <header>
-            <h1>{ props.title }</h1>
+            <h1>{ title }</h1>
             <CompletedTasks
-              toggleComplete={props.toggleComplete}
-              isCompleted={props.isCompleted} 
+              toggleComplete={ toggleComplete }
+              isCompleted={ isCompleted } 
             />
           </header>
         );

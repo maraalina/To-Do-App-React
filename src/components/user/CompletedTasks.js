@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 // TODO: CHECK OR UNCHECK USING API METHODS
 
-const CompletedTasks = props => {
+const CompletedTasks = ({ toggleComplete, isCompleted })=> {
     return (
         <label className="hide-tasks">
             <input 
             type="checkbox"
-            onChange={props.toggleComplete}
-            checked={props.isCompleted}
+            onChange={toggleComplete}
+            checked={isCompleted}
             /> Hide Completed tasks
         </label>
     );

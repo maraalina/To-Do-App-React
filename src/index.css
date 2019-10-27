@@ -3,7 +3,8 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
-  background:  #e6e6ea;
+  background: #e6e6ea;
+  margin: 0;
 }
 
 h1 {
@@ -137,3 +138,63 @@ input[type=submit], input[type=button] {
   text-decoration: none;
   white-space: nowrap;
 }
+
+
+/* Main-Nav*/
+.main-nav {
+  background-color: #3A6f85;
+  padding: 10px;
+  margin: 0;
+}
+
+.main-nav__container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
+  align-items: center;;
+}
+
+.main-nav__container__links {
+  display: flex;
+}
+.main-nav__container__links li {
+  padding: 5px 10px;
+  color: white;
+}
+.main-nav__container__links li a:visited,
+.main-nav__container__links li a,
+.main-nav__container__logo a,
+.main-nav__container__logo a:visited{
+  color: white;
+  text-decoration: none;
+}
+
+/*Auth*/
+
+/* Full-width input fields */
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=email]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Add padding to container elements */
+.auth-form {
+  padding: 16px;
+  width: 40%;
+  margin: auto;
+}
+

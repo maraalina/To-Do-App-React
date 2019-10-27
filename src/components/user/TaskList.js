@@ -4,11 +4,18 @@ import Task from './Task'
 
 // TODO: GET ALL TASKS
 
-const TaskList = props =>
-    <ul>
-        
-        {props.tasks
-            .filter( task => !props.isCompleted || !task.isChecked)
+const TaskList = ({ 
+    tasks, 
+    isCompleted,
+    toggleCheckboxChange, 
+    toggleEditing, 
+    changeText, 
+    removeTask
+}) =>
+ 
+    <React.Fragment>
+        {tasks
+            .filter( task => !isCompleted || !task.isChecked)
             .map((task, index) => 
             <Task
                 key={index}
@@ -16,13 +23,13 @@ const TaskList = props =>
                 isChecked={task.isChecked}
                 isEditing={task.isEditing}
         
-                handleCheckboxChange={ () => props.toggleCheckboxChange(task.id)}
-                handleToggleEditing={() => props.toggleEditing(task.id)}
-                changeText={e => props.changeText(e.target.value, task.id)}
-                removeTask={() => props.removeTask(task.id)}
+                handleCheckboxChange={ () => toggleCheckboxChange(task.id)}
+                handleToggleEditing={() => toggleEditing(task.id)}
+                changeText={e => changeText(e.target.value, task.id)}
+                removeTask={() => removeTask(task.id)}
             />
         )}
-    </ul>
+    </React.Fragment>
 
 TaskList.propTypes = {
     tasks: PropTypes.array.isRequired,

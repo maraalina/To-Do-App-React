@@ -3,27 +3,36 @@ import PropTypes from 'prop-types';
 
 // TODO: CRUDE ACTIONS FOR TASK USING FETCH API METHODS
 
-const Task = (props) => {
-  if (props.isEditing) {
+const Task = ({
+  isEditing, 
+  task, 
+  changeText, 
+  handleToggleEditing, 
+  isChecked, 
+  handleCheckboxChange, 
+  removeTask 
+}) => {
+
+  if (isEditing) {
     return (
       <form>
         <input 
           className="input-form"
           type="text"
-          value={props.task}
-          onChange={props.changeText}
+          value={task}
+          onChange={changeText}
         />
 
         <input 
           type="button"
           value="Save"
-          onClick={props.handleToggleEditing}
+          onClick={handleToggleEditing}
         />
 
         <button 
           type="button"
           className="cancel" 
-          onClick={props.handleToggleEditing}>
+          onClick={handleToggleEditing}>
           Cancel
         </button>
     </form> 
@@ -35,17 +44,17 @@ const Task = (props) => {
 
       <input 
         type="checkbox"
-        checked={props.isChecked}
-        onChange={props.handleCheckboxChange}
+        checked={isChecked}
+        onChange={handleCheckboxChange}
       />
 
-      <span className="task-text" onClick={props.handleToggleEditing}>
-        {props.task}
+      <span className="task-text" onClick={handleToggleEditing}>
+        {task}
       </span>
 
       <button
         className="remove-task" 
-        onClick={props.removeTask}>✖  
+        onClick={removeTask}>✖  
       </button>
     </li>  
   );

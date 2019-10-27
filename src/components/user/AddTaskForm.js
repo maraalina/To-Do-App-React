@@ -1,14 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AddTaskForm  = props => {
-    if (props.isClicked) {
+const AddTaskForm  = ({
+    isClicked,
+    newTaskSubmitHandler,
+    pendingTask,
+    handleValueChange,
+    toggleAddTask
+}) => {
+    if (isClicked) {
         return (
-            <form onSubmit={props.newTaskSubmitHandler}>
+            <form onSubmit={newTaskSubmitHandler}>
                 <input className="input-form"
                     type="text"
-                    value={props.pendingTask}
-                    onChange={props.handleValueChange}
+                    value={pendingTask}
+                    onChange={handleValueChange}
                     placeholder="Add a new task"
                 />
 
@@ -17,7 +23,7 @@ const AddTaskForm  = props => {
                     value="Save"
                 />
 
-                <button type="button" className="cancel" onClick={props.toggleAddTask}>
+                <button type="button" className="cancel" onClick={toggleAddTask}>
                     Cancel
                 </button>
 
@@ -26,10 +32,10 @@ const AddTaskForm  = props => {
     }
 
     return (
-        <span className="action" onClick={props.toggleAddTask}>
+        <span className="action" onClick={toggleAddTask}>
             <span className="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" data-svgs-path="sm1/plus.svg">
-                    <path fillRule="currentColor" fill-rule="evenodd" d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"></path>
+                    <path fillRule="currentColor evenodd" d="M6 6V.5a.5.5 0 0 1 1 0V6h5.5a.5.5 0 1 1 0 1H7v5.5a.5.5 0 1 1-1 0V7H.5a.5.5 0 0 1 0-1H6z"></path>
                 </svg>
             </span>Add task
         </span>);  
