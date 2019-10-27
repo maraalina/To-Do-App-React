@@ -5,23 +5,6 @@ import AddTaskForm from './AddTaskForm';
 import PropTypes from 'prop-types';
 
 export default class UserContainer extends Component {
-
-  state = {
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkYjJkNjY2NzI0Y2NiMjZiNDQzZDUwMyIsImlhdCI6MTU3MjAwMTM4MiwiZXhwIjoxNTgwNjQxMzgyfQ.VprizZHGDmWdUiy3ZMG1y5Vwljs10vN0vURBHDELoXw'
-  }
-
-  async componentDidMount () {
-    await fetch("http://localhost:3000/api/user", {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${this.state.token}`
-      }
-    })
-    .then(response => this.setState({
-      
-    }))
-  }
-
   render() {
     const {
       title,
