@@ -1,0 +1,57 @@
+/* Task Component */
+
+  .task {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .task-text {
+    padding: 0px 15px;
+  }
+  
+  .remove-task {
+    font-size: 1.15em;
+    border: none;
+    outline: none;
+    color: lightgray;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    margin-left: auto;
+  }
+  
+  .remove-task:hover {
+    color: #EF5350
+  }
+
+  /* Add task button */
+.action {
+    display: block;
+    height: 3em;
+    line-height: 3em;
+    color: gray;
+    margin: 0 4px;
+  }
+  
+  .icon {
+  color: $secondary-color;  
+  margin-right: 5px;
+  }
+  
+  .action {
+  cursor: pointer;
+  padding: 1px;
+  }
+  
+  .action a {
+  margin-right: 10px;
+  }
+  
+  .action:hover {
+  color: $primary-color;
+  }
+  
+  
+ 

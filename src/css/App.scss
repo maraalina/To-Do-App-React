@@ -1,0 +1,41 @@
+@import './variables';
+@import './main-header';
+@import './layouts';
+@import './auth';
+@import './form-elements';
+
+@import './user/user';
+@import './user/layout';
+@import './user/task';
+@import './user/inputs';
+
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background: $background-color;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}

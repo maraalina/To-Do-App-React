@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Checkbox from './Checkbox';
 
 // TODO: CRUDE ACTIONS FOR TASK USING FETCH API METHODS
 
 const Task = ({
   isEditing, 
   task, 
-  changeText, 
   handleToggleEditing, 
   isChecked, 
   handleCheckboxChange, 
-  removeTask 
+  removeTask,
+  toggleOffIsEditing
 }) => {
+
+  const [text, setText] = useState(task.name)
 
   if (isEditing) {
     return (
@@ -19,20 +22,20 @@ const Task = ({
         <input 
           className="input-form"
           type="text"
-          value={task}
-          onChange={changeText}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
         />
 
         <input 
           type="button"
           value="Save"
-          onClick={handleToggleEditing}
+          onClick={() => handleToggleEditing(task._id, {isEditing: !isEditing, name: text})}
         />
 
         <button 
           type="button"
           className="cancel" 
-          onClick={handleToggleEditing}>
+          onClick={() => toggleOffIsEditing(task._id)}>
           Cancel
         </button>
     </form> 
@@ -41,16 +44,16 @@ const Task = ({
 
   return (
     <li className="task">
-
-      <input 
-        type="checkbox"
-        checked={isChecked}
-        onChange={handleCheckboxChange}
-      />
-
-      <span className="task-text" onClick={handleToggleEditing}>
-        {task}
-      </span>
+      <label>
+        <Checkbox
+          checked={isChecked}
+          onChange={() => handleCheckboxChange(task._id, {isChecked: !isChecked})}
+        />
+      </label>
+        <span className="task-text" onClick={() => toggleOffIsEditing(task._id)}>
+          {task.name}
+        </span>
+      
 
       <button
         className="remove-task" 
@@ -62,10 +65,9 @@ const Task = ({
 
 
 Task.propTypes = {
-    task: PropTypes.string.isRequired,
+    // task: PropTypes.string.isRequired,
     isEditing: PropTypes.bool.isRequired,
     handleToggleEditing: PropTypes.func.isRequired,
-    changeText: PropTypes.func.isRequired
 };
 
 export default Task;

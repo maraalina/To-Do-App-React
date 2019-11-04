@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import './css/App.scss'
+
+import { BrowserRouter as Router } from "react-router-dom";
+import { AppContextProvider } from "./components/app/AppContext";
 
 import * as serviceWorker from './serviceWorker';
-import App from './components/App'; 
+import App from './components/app/App'; 
 
 ReactDOM.render(
-    <App />,
+    <AppContextProvider>
+        <Router>
+            <App />
+        </Router>
+    </AppContextProvider>,
     document.getElementById('root')
 );
 
