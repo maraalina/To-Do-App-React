@@ -6,6 +6,7 @@ $object: 'main-nav';
     margin: 0;
     overflow: hidden;
     position: fixed;
+    z-index: 1400;
     top: 0;
     left: 0;
     width: 100%;
@@ -14,10 +15,9 @@ $object: 'main-nav';
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 5px 0;
 
       font-size: 14px;
-      padding: 5px 10px;
+      padding: 10px 10px;
       color: white;
 
       &__logo {
@@ -29,10 +29,14 @@ $object: 'main-nav';
       &__links {
         display: flex;
 
-        li:first-child {
-          padding-right: 10px;
+        li:last-child {
+          padding-left: 10px;
         }
       }
 
     }
   }
+
+.mobile-menu {
+  height: 24px;
+}

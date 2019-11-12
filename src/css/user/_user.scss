@@ -11,27 +11,6 @@ header {
   padding: 30px 40px;
 }  
 
-.side-bar {
-  .list {
-    display: flex;
-    align-items: center;
-    padding: 7.5px 10px;
-  }
-
-  .list:hover{
-     background-color: white;
-   }
- 
- .current {
-   background: #fff;
-   font-weight: bold;
- }
-   
- .list:hover{
-   cursor: pointer;
- }
-}
-
 .tasks-count {
   padding-left: 5px;
   padding-top: 1px;
